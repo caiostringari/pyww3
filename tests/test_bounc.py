@@ -15,7 +15,7 @@ class TestWW3Bounc:
     def test_WW3Bounc_file(self):
 
         W = WW3Bounc(runpath="tests/test_run/",
-                     mod_def="tests/test_data/GLOB_60M_mod_def.ww3",
+                     mod_def="tests/test_data/GLOB_60_MIN.ww3grid",
                      bound_file="tests/test_run/spc/ww3.201001_spec.nc")
         W.to_file()
         W.run()
@@ -25,7 +25,7 @@ class TestWW3Bounc:
     def test_WW3Bounc_path(self):
 
         W = WW3Bounc(runpath="tests/test_run/",
-                     mod_def="tests/test_data/GLOB_60M_mod_def.ww3",
+                     mod_def="tests/test_data/GLOB_60_MIN.ww3grid",
                      bound_file="tests/test_run/spc")
         W.to_file()
         W.run()

@@ -9,14 +9,13 @@ import datetime
 from dataclasses import dataclass
 from textwrap import dedent as dtxt
 
-from .utils import (run, bool_to_str, verify_runpath, verify_mod_def,
+from .utils import (bool_to_str, verify_runpath, verify_mod_def,
                     verify_ww3_out)
-
-from .namelists import remove_namelist_block, add_namelist_block
+from .ww3 import WW3Base
 
 
 @dataclass
-class WW3Ounp:
+class WW3Ounp(WW3Base):
 
     # withoput these two parameters, everything breaks
     runpath: str
@@ -324,31 +323,3 @@ class WW3Ounp:
                     ! -------------------------------------------------------------------- !""")
 
         return txt
-
-    def to_file(self):
-        """Write namelist text to file ww3_ounp.nml."""
-        if os.path.isfile(os.path.join(self.runpath, self.output)):
-            os.remove(os.path.join(self.runpath, self.output))
-        with open(os.path.join(self.runpath, self.output), 'w') as f:
-            f.write(self.text)
-
-    def run(self):
-        """Run the program ww3_ounp."""
-        res = run(self.runpath, self.EXE)
-        self.__setattr__("returncode", res.returncode)
-        self.__setattr__("stdout", res.stdout)
-        self.__setattr__("stderr", res.stderr)
-
-    def update_text(self, block: str, action: str = "add", index: int = -1):
-        """Update namelist block in the text with an action."""
-
-        # add case
-        if action.lower().startswith("a"):
-            newtext = add_namelist_block(self.text, block, index)
-
-        # remove case
-        else:
-            newtext = remove_namelist_block(self.text, block)
-
-        # update class attribute
-        self.__setattr__("text", newtext)

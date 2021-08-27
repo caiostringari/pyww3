@@ -10,7 +10,7 @@ class TestWW3Shel:
     def test_shel(self):
         W = WW3Shel(nproc=8,
                     runpath="tests/test_run/",
-                    mod_def="tests/test_data/GLOB_60M_mod_def.ww3",
+                    mod_def="tests/test_data/GLOB_60_MIN.ww3grid",
                     domain_start=datetime.datetime(2010, 1, 1, 0),
                     domain_stop=datetime.datetime(2010, 1, 1, 2),
                     input_forcing_winds=True,

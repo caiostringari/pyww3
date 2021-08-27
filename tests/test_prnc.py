@@ -15,7 +15,7 @@ class TestPrnc:
     # test winds from ECMWF
     def test_Era5_winds(self):
         W = WW3Prnc(runpath="tests/test_run/",
-                    mod_def="tests/test_data/GLOB_60M_mod_def.ww3",
+                    mod_def="tests/test_data/GLOB_60_MIN.ww3grid",
                     forcing_field="WINDS",
                     forcing_grid_latlon=True,
                     file_filename="tests/test_data/Era5_2010_01_winds_2days.nc",
@@ -34,7 +34,7 @@ class TestPrnc:
     # test ice concentration from ECMWF
     def test_Era5_ice_conc(self):
         W = WW3Prnc(runpath="tests/test_run/",
-                    mod_def="tests/test_data/GLOB_60M_mod_def.ww3",
+                    mod_def="tests/test_data/GLOB_60_MIN.ww3grid",
                     forcing_field="ICE_CONC",
                     forcing_grid_latlon=True,
                     file_filename="tests/test_data/Era5_2010_01_ice_2days.nc",

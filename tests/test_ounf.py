@@ -15,7 +15,7 @@ class TestWW3Ounf:
     def test_ounf(self):
 
         W = WW3Ounf(runpath="tests/test_run/",
-                    mod_def="tests/test_data/GLOB_60M_mod_def.ww3",
+                    mod_def="tests/test_data/GLOB_60_MIN.ww3grid",
                     ww3_grd="tests/test_run/out_grd.ww3",
                     field_timestart=datetime.datetime(2010, 1, 1),
                     field_timestride=3600)

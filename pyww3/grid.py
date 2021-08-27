@@ -6,13 +6,12 @@ import os
 from dataclasses import dataclass
 from textwrap import dedent as dtxt
 
-from .utils import (run, bool_to_str, verify_runpath, verify_ww3_file)
-
-from .namelists import add_namelist_block, remove_namelist_block
+from .ww3 import WW3Base
+from .utils import (bool_to_str, verify_runpath, verify_ww3_file)
 
 
 @dataclass
-class WW3GRid:
+class WW3GRid(WW3Base):
 
     runpath: str
     grid_name: str
@@ -42,10 +41,6 @@ class WW3GRid:
     timesteps_dtkth: float = 240.
     timesteps_dtmin: float = 10.
 
-    # grid_name: str = "mygrid"
-    # grid_nml: str = "namelists.nml"
-    # grid_type: str = "RECT"
-    # grid_coord: str = "SPHE"
     grid_zlim: float = 0.
     grid_dmin: float = 0.
 
@@ -977,30 +972,30 @@ class WW3GRid:
 
         return txt
 
-    def to_file(self):
-        """Write namelist text to file ww3_ounf.nml."""
-        if os.path.isfile(os.path.join(self.runpath, self.output)):
-            os.remove(os.path.join(self.runpath, self.output))
-        with open(os.path.join(self.runpath, self.output), 'w') as f:
-            f.write(self.text)
+    # def to_file(self):
+    #     """Write namelist text to file ww3_ounf.nml."""
+    #     if os.path.isfile(os.path.join(self.runpath, self.output)):
+    #         os.remove(os.path.join(self.runpath, self.output))
+    #     with open(os.path.join(self.runpath, self.output), 'w') as f:
+    #         f.write(self.text)
 
-    def run(self):
-        """Run the program ww3_grid."""
-        res = run(self.runpath, self.EXE)
-        self.__setattr__("returncode", res.returncode)
-        self.__setattr__("stdout", res.stdout)
-        self.__setattr__("stderr", res.stderr)
+    # def run(self):
+    #     """Run the program ww3_grid."""
+    #     res = run(self.runpath, self.EXE)
+    #     self.__setattr__("returncode", res.returncode)
+    #     self.__setattr__("stdout", res.stdout)
+    #     self.__setattr__("stderr", res.stderr)
 
-    def update_text(self, block: str, action: str = "add", index: int = -1):
-        """Update namelist block in the text with an action."""
+    # def update_text(self, block: str, action: str = "add", index: int = -1):
+    #     """Update namelist block in the text with an action."""
 
-        # add case
-        if action.lower().startswith("a"):
-            newtext = add_namelist_block(self.text, block, index)
+    #     # add case
+    #     if action.lower().startswith("a"):
+    #         newtext = add_namelist_block(self.text, block, index)
 
-        # remove case
-        else:
-            newtext = remove_namelist_block(self.text, block)
+    #     # remove case
+    #     else:
+    #         newtext = remove_namelist_block(self.text, block)
 
-        # update class attribute
-        self.__setattr__("text", newtext)
+    #     # update class attribute
+    #     self.__setattr__("text", newtext)
