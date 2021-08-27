@@ -1,0 +1,22 @@
+{
+    "grid_nml": "GLOB_60_MIN.nml",
+    "grid_name": "GLOB_60M",
+    "grid_type":"RECT",
+    "grid_coord":"SPHE",
+    "grid_clos": "NONE",
+    "rect_nx": 360,
+    "rect_ny": 157,
+    "rect_sx": 1.0,
+    "rect_sy": 1.0,
+    "rect_sf": 1.0,
+    "rect_x0": -180.0,
+    "rect_y0": -78.0,
+    "rect_sf0" :1.0,
+    "grid_zlim": -0.1,
+    "grid_dmin": 2.5,
+    "depth_filename": "GLOB_60_MIN.depth_ascii",
+    "depth_sf": 0.0010,
+    "obst_filename": "GLOB_60_MIN.obstr_lev1",
+    "obst_sf": 0.010,
+    "mask_filename": "GLOB_60_MIN.maskorig_ascii"
+}

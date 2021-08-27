@@ -1,0 +1,6 @@
+&UNST
+  EXPFSN = T
+  IMPFSN = F
+  UGOBCAUTO = T
+  UGOBCDEPTH = 50
+/

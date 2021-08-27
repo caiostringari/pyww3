@@ -1,0 +1,12 @@
+{
+    "grid_nml": "UNSTRUCT_BR.nml",
+    "grid_name": "UNSTRUCT_BR",
+    "grid_type":"UNST",
+    "grid_coord":"SPHE",
+    "grid_clos": "NONE",
+    "unst_sf": -1,
+    "unst_filename": "UNSTRUCT_BR.msh",
+    "unst_idla": 4,
+    "unst_idfm": 1,
+    "unst_format": "(20f10.2)"
+}
