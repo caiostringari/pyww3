@@ -4,29 +4,26 @@
 
 from setuptools import setup, find_packages
 
-with open('README.rst') as readme_file:
+with open('docs/readme.rst') as readme_file:
     readme = readme_file.read()
 
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [ ]
+requirements = ['netcdf4', 'xarray']
 
-test_requirements = ['pytest>=3.6', ]
-
-from setuptools import setup, find_packages
+test_requirements = ['pytest>=3.7', ]
 
 setup(
     author="Caio Stringari",
     author_email='caio.stringari@gmail.com',
-    python_requires='>=3.6',
+    python_requires='>=3.7',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
     ],
@@ -40,12 +37,12 @@ setup(
     license="GNU General Public License v3.0",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
-    keywords='pyww3',
+    keywords=['Wavewatch', "WW3"],
     name='pyww3',
-    packages=find_packages(include=['pyww3', 'pyww3.*']),
+    packages=find_packages(),
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/caiostringari/pyww3',
-    version='0.1.0',
+    version='0.1.4',
     zip_safe=False,
 )

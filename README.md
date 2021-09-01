@@ -1,5 +1,7 @@
 # pyww3
 
+[![Documentation Status](https://readthedocs.org/projects/pyww3/badge/?version=latest)](https://pyww3.readthedocs.io/en/latest/?badge=latest) [![PyPI version](https://badge.fury.io/py/pyww3.svg)](https://badge.fury.io/py/pyww3)
+
 Python wrapper for NOAA's WaveWatchIII (WW3) Model.
 
 This package wraps around the WW3's executables by properly defining the namelists (``.nml``) required to drive the model's executables.

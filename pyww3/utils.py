@@ -71,6 +71,7 @@ def verify_mod_def(runpath, mod_def):
     """Verify for mod_def file exists in the runpath."""
     if not os.path.isfile(mod_def):
         error = f"No such file or directory \'{mod_def}\'"
+        raise ValueError(error)
     if not os.path.isfile(os.path.join(runpath, "mod_def.ww3")):
         try:
             shutil.copy(os.path.abspath(mod_def),
