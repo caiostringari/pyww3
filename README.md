@@ -1,6 +1,6 @@
 # pyww3
 
-[![Documentation Status](https://readthedocs.org/projects/pyww3/badge/?version=latest)](https://pyww3.readthedocs.io/en/latest/?badge=latest) [![PyPI version](https://badge.fury.io/py/pyww3.svg)](https://badge.fury.io/py/pyww3)
+[![Documentation Status](https://readthedocs.org/projects/pyww3/badge/?version=latest)](https://pyww3.readthedocs.io/en/latest/?badge=latest) [![PyPI version](https://badge.fury.io/py/pyww3.svg)](https://badge.fury.io/py/pyww3) [![CircleCI](https://circleci.com/gh/caiostringari/pyww3/tree/main.svg?style=svg)](https://circleci.com/gh/caiostringari/pyww3/tree/main)
 
 Python wrapper for NOAA's WaveWatchIII (WW3) Model.
 
