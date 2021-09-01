@@ -15,20 +15,20 @@ pyww3
 
 Python wrapper for NOAA's WaveWatchIII (WW3) Model.
 
-This package wraps around the model's execuables by properly defining the namelists (``.nml``)
-required to drive the model's execuables.
-
+This package wraps around the WW3's executables by properly defining the namelists (``.nml``) required to drive the model's executables.
 
 Requirements
 ------------
 
-``pyww3`` requires ``WaveWatchIII`` to be properly compiled available in your ``$PATH``.
+``pyww3`` requires ``WaveWatchIII`` to be properly compiled with ``netCDF4`` available in your ``$PATH``.
 Please follow the installation instructions from `NOAA <https://github.com/NOAA-EMC/WW3/wiki/Quick-Start/>`_.
 
 
-Programs supported: ``ww3_grid``, ``ww3_prnc``, ``ww3_shel``, ``ww3_ounf``, ``ww3_ounpo`` and ``ww3_bounc``.
+Programs supported: ``ww3_grid``, ``ww3_prnc``, ``ww3_shel``, ``ww3_ounf``, ``ww3_ounp`` and ``ww3_bounc``.
 
-Note that I don't have plans to support programs that require ASCII input (such as ``ww3_outf``).
+Note that I don't have plans to support programs that require ASCII input (such as ``ww3_outf``) even tough they may have an associated namelist.
+
+You will need ``python 3.7+`` because of the extensive usage of ``dataclasses``.
 
 Getting Started
 ---------------
@@ -54,16 +54,6 @@ to run simulation with ``ww3_shel`` you do::
         print(W.stdout) # print the output given by WW3
 
 
-Features
---------
-
-
-TODOS
------
-
-- Add support for ``ww3_multi``
-
-
 Credits
 -------
 
@@ -71,3 +61,10 @@ This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypack
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+WW3 is maintained and distributed by NOAA's Environmental Modeling Center (EMC).
+
+Disclaimer
+----------
+
+There is no warranty for the program, to the extent permitted by applicable law except when otherwise stated in writing the copyright holders and/or other parties provide the program “as is” without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. the entire risk as to the quality and performance of the program is with you. should the program prove defective, you assume the cost of all necessary servicing, repair or correction.
