@@ -21,34 +21,40 @@ Note that I don't have plans to support programs that require ASCII input (such 
 
 You will need `python 3.7+` because of the extensive usage of `dataclasses`.
 
+The only python dependency is `xarray` with `netcdf` support. `pip install netcdf4 xarray` should be enough to get you going.
+
 
 ## Getting Started
 
-All the implemented classes have the same structure and methods. For example,
-to run simulation with ``ww3_shel`` you do::
 
-```python
-import datetime
-from pyww3.shel import WW3Shel
-W = WW3Shel(nproc=8,
-            runpath="tests/test_run/",
-            mod_def="tests/test_data/GLOB_60_MIN.ww3grid",
-            domain_start=datetime.datetime(2010, 1, 1, 0),
-            domain_stop=datetime.datetime(2010, 1, 1, 2),
-            input_forcing_winds=True,
-            input_forcing_ice_conc=True,
-            date_field_stride=3600,
-            date_point_stride=3600,
-            date_restart_stride=3600,
-            type_point_file="tests/test_data/boundary_point_list.txt")
-W.to_file() # writes ww3_shel.nml in the run path
-W.run()  # run the simulation
-print(W.stdout) # print the output given by WW3
+### Installation:
+
+```bash
+pip install pyww3
 ```
+
+Development mode:
+
+```
+git clone git://github.com/caiostringari/pyww3
+cd pyww3
+pip install -e .
+```
+
+### Documentation
+
+[**READTHEDOCS**](https://pyww3.readthedocs.io/en/latest/**)
+
+**Note:** I am still documenting everything.
+
+### Examples:
+
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Py-aMvTMxDiyjpPXBoIe5eQx8iRm47zF?usp=sharing) **→ Global Simulation**
 
 
 ## TODO
 
+- Add the documentation (working in progress)
 - Add support for ``ww3_multi`` ?
 
 
