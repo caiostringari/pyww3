@@ -43,13 +43,13 @@ pip install -e .
 
 ### Documentation
 
-[**READTHEDOCS**](https://pyww3.readthedocs.io/en/latest/**)
+[**READTHEDOCS**](https://pyww3.readthedocs.io/en/latest/)
 
 **Note:** I am still documenting everything.
 
 ### Examples:
 
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Py-aMvTMxDiyjpPXBoIe5eQx8iRm47zF?usp=sharing) **→ Global Simulation**
+**Global Simulation ↦** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Py-aMvTMxDiyjpPXBoIe5eQx8iRm47zF?usp=sharing)
 
 
 ## TODO
