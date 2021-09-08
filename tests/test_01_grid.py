@@ -6,6 +6,7 @@ Test pyww3.grid.WW3Grid.
 """
 import os
 import json
+import pytest
 from pyww3.grid import WW3GRid
 
 
@@ -52,6 +53,7 @@ class TestWW3Grid:
 
         assert W.returncode == 0
 
+    @pytest.mark.skip(reason="I want only to test the global grid here.")
     def test_unstruc_grid(self):
         datapath = "tests/test_data/"
         grid_name = "UNSTRUCT_BR"

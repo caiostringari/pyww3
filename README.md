@@ -41,13 +41,29 @@ cd pyww3
 pip install -e .
 ```
 
-### Documentation
+Runnig all tests:
+
+```
+pytest
+```
+
+Individual tests:
+
+- `ww3_grid` with `pytest tests/test_01_grid.py`
+- `ww3_prnc` with `pytest tests/test_02_prnc.py`
+- `ww3_shel` with `pytest tests/test_03_shel.py`
+- `ww3_ounf` with `pytest tests/test_04_ounf.py`
+- `ww3_ounp` with `pytest tests/test_05_ounp.py`
+- `ww3_bounc` with `pytest tests/test_06_bounc.py`
+
+
+## Documentation
 
 [**READTHEDOCS**](https://pyww3.readthedocs.io/en/latest/)
 
 **Note:** I am still documenting everything.
 
-### Examples:
+## Examples:
 
 **Global Simulation ↦** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Py-aMvTMxDiyjpPXBoIe5eQx8iRm47zF?usp=sharing)
 
