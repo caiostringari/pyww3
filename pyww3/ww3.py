@@ -1,22 +1,22 @@
-"""
-Define the base class WW3(). Everything else enhirits from this class.
-"""
 import os
 from .utils import (run, mpirun)
 from .namelists import add_namelist_block, remove_namelist_block
 
 
 class WW3Base():
+    """
+    Define the base class WW3(). Everything else enhirits from this class.
+    """
 
     def to_file(self):
-        """Write namelist text to file ww3_shel.nml."""
+        """Write namelist text to file ww3_?.nml."""
         if os.path.isfile(os.path.join(self.runpath, self.output)):
             os.remove(os.path.join(self.runpath, self.output))
         with open(os.path.join(self.runpath, self.output), 'w') as f:
             f.write(self.text)
 
     def run(self, mpi=False, nproc=2):
-        """Run the program ww3_shel using mpi."""
+        """Run a program using mpi or not."""
         if mpi:
             res = mpirun(self.runpath, self.EXE, nproc)
         else:

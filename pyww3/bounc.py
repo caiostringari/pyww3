@@ -1,6 +1,3 @@
-"""
-Abstracts the program ww3_bounc.
-"""
 from logging import warning
 import os
 
@@ -11,12 +8,15 @@ from dataclasses import dataclass
 import shutil
 from textwrap import dedent as dtxt
 
-from .utils import (run, verify_runpath, verify_mod_def,
-                    verify_ww3_file)
+from .ww3 import WW3Base
+from .utils import (verify_runpath, verify_mod_def, verify_ww3_file)
 
 
 @dataclass
-class WW3Bounc:
+class WW3Bounc(WW3Base):
+    """This class abstracts the program ww3_bounc. It is an extension of the class
+    :class:`pyww3.ww3.WW3Base()`.
+    """
 
     # withoput these two parameters, everything breaks
     runpath: str
@@ -115,16 +115,16 @@ class WW3Bounc:
                    ! -------------------------------------------------------------------- !""")
         return txt
 
-    def to_file(self):
-        """Write namelist text to file ww3_bounc.nml."""
-        if os.path.isfile(os.path.join(self.runpath, self.output)):
-            os.remove(os.path.join(self.runpath, self.output))
-        with open(os.path.join(self.runpath, self.output), 'w') as f:
-            f.write(self.text)
+    # def to_file(self):
+    #     """Write namelist text to file ww3_bounc.nml."""
+    #     if os.path.isfile(os.path.join(self.runpath, self.output)):
+    #         os.remove(os.path.join(self.runpath, self.output))
+    #     with open(os.path.join(self.runpath, self.output), 'w') as f:
+    #         f.write(self.text)
 
-    def run(self):
-        """Run the program ww3_bounc."""
-        res = run(self.runpath, self.EXE)
-        self.__setattr__("returncode", res.returncode)
-        self.__setattr__("stdout", res.stdout)
-        self.__setattr__("stderr", res.stderr)
+    # def run(self):
+    #     """Run the program ww3_bounc."""
+    #     res = run(self.runpath, self.EXE)
+    #     self.__setattr__("returncode", res.returncode)
+    #     self.__setattr__("stdout", res.stdout)
+    #     self.__setattr__("stderr", res.stderr)

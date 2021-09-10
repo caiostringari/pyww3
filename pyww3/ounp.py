@@ -1,6 +1,3 @@
-"""
-Abstracts the ww3_ounp program.
-"""
 from logging import warning
 import os
 
@@ -16,6 +13,9 @@ from .ww3 import WW3Base
 
 @dataclass
 class WW3Ounp(WW3Base):
+    """This class abstracts the program ww3_ounf. It is an extension of the class
+    :class:`pyww3.ww3.WW3Base()`.
+    """
 
     # withoput these two parameters, everything breaks
     runpath: str

@@ -1,6 +1,3 @@
-"""
-Abstracts the ww3_grid program.
-"""
 import os
 
 from dataclasses import dataclass
@@ -12,6 +9,9 @@ from .utils import (bool_to_str, verify_runpath, verify_ww3_file)
 
 @dataclass
 class WW3GRid(WW3Base):
+    """This class abstracts the program ww3_grid. It is an extension of the class
+    :class:`pyww3.ww3.WW3Base()`.
+    """
 
     runpath: str
     grid_name: str

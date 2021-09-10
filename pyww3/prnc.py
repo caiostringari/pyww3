@@ -1,6 +1,3 @@
-"""
-Abstracts the ww3_prnc program.
-"""
 import os
 import re
 
@@ -20,8 +17,8 @@ from .ww3 import WW3Base
 
 @dataclass
 class WW3Prnc(WW3Base):
-    """
-    Abstraction class for ww3_prnc.
+    """This class abstracts the program ww3_prnc. It is an extension of the class
+    :class:`pyww3.ww3.WW3Base()`.
     """
 
     # withoput these two parameters, everything breaks
