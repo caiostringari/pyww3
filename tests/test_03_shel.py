@@ -13,7 +13,7 @@ class TestWW3Shel:
             get_grid(grid)
 
         dt = 480  # main dt
-        ndt = 5  # number of steps
+        ndt = 2  # number of steps
         total_sim_time = dt * ndt
         domain_start = datetime.datetime(2010, 1, 1, 0)
         domain_stop = datetime.datetime(2010, 1, 1, 0) + datetime.timedelta(seconds=total_sim_time)
