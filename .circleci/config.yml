@@ -52,7 +52,7 @@ jobs:
           pkg-manager: pip
       - run: sudo apt install python3-venv
       - run: pip install pytest natsort googledrivedownloader  # add this to test requirements later
-      - run: python3 -m pip -e .
+      - run: python3 -m pip install -e .
       - run: pytest
       
           
