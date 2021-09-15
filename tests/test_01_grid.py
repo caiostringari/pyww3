@@ -48,10 +48,10 @@ class TestWW3Grid:
         W.update_text("&CURV_NML", action="remove")
         W.update_text("&UNST_NML", action="remove")
 
-        W.timesteps_dtmax = 480.0 * 3
-        W.timesteps_dtxy = 160.0 * 3
-        W.timesteps_dtkth = 240.0 * 3
-        W.timesteps_dtmin = 10.0 * 3
+        W.timesteps_dtmax = 480.0 * 1
+        W.timesteps_dtxy = 160.0 * 1
+        W.timesteps_dtkth = 240.0 * 1
+        W.timesteps_dtmin = 10.0 * 1
         W.text = W.populate_namelist()
         # W.populate_namelist()
 

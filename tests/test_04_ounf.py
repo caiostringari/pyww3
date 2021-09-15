@@ -23,7 +23,7 @@ class TestWW3Ounf:
                     mod_def=grid,
                     ww3_grd="tests/test_run/out_grd.ww3",
                     field_timestart=datetime.datetime(2010, 1, 1),
-                    field_timestride=3600)
+                    field_timestride=480)
         W.to_file()
         W.run()
 

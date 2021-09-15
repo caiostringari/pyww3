@@ -23,7 +23,7 @@ class TestWW3Ounp:
                     mod_def=grid,
                     ww3_pnt="tests/test_run/out_pnt.ww3",
                     point_timestart=datetime.datetime(2010, 1, 1),
-                    point_timestride=3600)
+                    point_timestride=480)
         W.to_file()
         W.run()
 
@@ -40,7 +40,7 @@ class TestWW3Ounp:
                     mod_def=grid,
                     ww3_pnt="tests/test_run/out_pnt.ww3",
                     point_timestart=datetime.datetime(2010, 1, 1),
-                    point_timestride=3600,
+                    point_timestride=480,
                     point_samefile=False,
                     file_prefix="spc/ww3.")
         W.to_file()

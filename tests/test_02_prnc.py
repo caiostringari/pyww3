@@ -35,7 +35,7 @@ class TestPrnc:
                     file_var_1="u10",
                     file_var_2="v10",
                     forcing_timestart=datetime.datetime(2010, 1, 1),
-                    forcing_timestop=datetime.datetime(2010, 1, 2))
+                    forcing_timestop=datetime.datetime(2010, 1, 1, 2))
 
         W.reverse_latitudes("reversed_winds.nc")
         W.to_file()
@@ -62,7 +62,7 @@ class TestPrnc:
                     file_latitude="latitude",
                     file_var_1="siconc",
                     forcing_timestart=datetime.datetime(2010, 1, 1),
-                    forcing_timestop=datetime.datetime(2010, 1, 2))
+                    forcing_timestop=datetime.datetime(2010, 1, 1, 2))
 
         W.reverse_latitudes("reversed_ice.nc")
         W.to_file()

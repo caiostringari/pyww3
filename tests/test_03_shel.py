@@ -12,16 +12,22 @@ class TestWW3Shel:
         if not os.path.isfile(grid):
             get_grid(grid)
 
-        W = WW3Shel(nproc=8,
+        dt = 480  # main dt
+        ndt = 5  # number of steps
+        total_sim_time = dt * ndt
+        domain_start = datetime.datetime(2010, 1, 1, 0)
+        domain_stop = datetime.datetime(2010, 1, 1, 0) + datetime.timedelta(seconds=total_sim_time)
+
+        W = WW3Shel(nproc=1,
                     runpath="tests/test_run/",
                     mod_def=grid,
-                    domain_start=datetime.datetime(2010, 1, 1, 0),
-                    domain_stop=datetime.datetime(2010, 1, 1, 6),
+                    domain_start=domain_start,
+                    domain_stop=domain_stop,
                     input_forcing_winds=True,
                     input_forcing_ice_conc=True,
-                    date_field_stride=3600,
-                    date_point_stride=3600,
-                    date_restart_stride=3600,
+                    date_field_stride=dt,
+                    date_point_stride=dt,
+                    date_restart_stride=dt,
                     type_point_file="tests/test_data/boundary_point_list.txt")
         W.to_file()  # write ww3_shel.nml
         W.run(mpi=True, nproc=W.nproc)  # run the simulation with MPI
