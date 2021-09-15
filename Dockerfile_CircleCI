@@ -1,0 +1,49 @@
+FROM cimg/base:stable
+# FROM ubuntu:20.04
+# Modified from https://github.com/dspelaez/ww3_install
+
+# ============================
+# === Install dependencies ===
+# ============================
+
+# set home variable
+# ENV HOME /opt
+# ENV TERM xterm
+
+ENV DEBIAN_FRONTEND=noninteractive
+RUN sudo apt update -y
+RUN sudo apt install -y libhdf5-dev gcc g++ gfortran build-essential    \
+                   libhdf5-serial-dev libnetcdff-dev libnetcdf-dev \
+                   netcdf-bin netcdf-doc libudunits2-0 wget mpich \
+                   python3 python3-pip
+
+# set environment variables
+ENV WWATCH3_NETCDF NC4
+ENV NETCDF_CONFIG /usr/bin/nc-config
+
+# ==============================
+# === Install Wavewatch III  ===
+# ==============================
+
+# get tar file from repository
+RUN sudo mkdir -p /opt/ww3
+RUN sudo chmod 777 -R /opt/ww3
+RUN wget https://github.com/NOAA-EMC/WW3/archive/refs/tags/6.07.1.tar.gz -O /opt/ww3/6.07.1.tar.gz
+
+# untar
+RUN tar -zxf /opt/ww3/6.07.1.tar.gz -C /opt/ww3/
+
+# copy switch, comp and link files
+RUN cp /opt/ww3/WW3-6.07.1/model/bin/switch_Ifremer2 /opt/ww3/WW3-6.07.1/model/bin/switch
+RUN cp /opt/ww3/WW3-6.07.1/model/bin/link.Gnu /opt/ww3/WW3-6.07.1/model/bin/link
+RUN cp /opt/ww3/WW3-6.07.1/model/bin/comp.Gnu /opt/ww3/WW3-6.07.1/model/bin/comp
+
+# compile the entire code
+RUN echo "n" | bash /opt/ww3/WW3-6.07.1/model/bin/w3_setup '/opt/ww3/WW3-6.07.1/model'
+RUN bash /opt/ww3/WW3-6.07.1/model/bin/w3_clean
+RUN bash /opt/ww3/WW3-6.07.1/model/bin/w3_make
+
+# add WW3 exes to PATH
+ENV PATH="/opt/ww3/WW3-6.07.1/model/exe:$PATH"
+
+# ---  end of file ---
