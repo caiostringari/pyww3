@@ -47,6 +47,7 @@ jobs:
       - checkout
       - python/install-packages:
           pkg-manager: pip
+      - run: pip install pytest
       - run: pytest
       
           
